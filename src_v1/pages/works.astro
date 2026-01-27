@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 実績データ（後でCMSや別ファイルに移行可能）
+const works = [
+  { id: 1, title: "ACSM計測システム", category: "受注案件", image: null },
+  { id: 2, title: "組箱シリーズ", category: "製品", image: null },
+  { id: 3, title: "夏休みワークショップ", category: "ワークショップ", image: null },
+  { id: 4, title: "博物館展示装置", category: "受注案件", image: null },
+  { id: 5, title: "オリジナルキーホルダー", category: "製品", image: null },
+  { id: 6, title: "親子レーザー体験", category: "ワークショップ", image: null },
+  { id: 7, title: "試作品開発", category: "受注案件", image: null },
+  { id: 8, title: "塾生作品展", category: "ワークショップ", image: null },
+  { id: 9, title: "カスタムパーツ製作", category: "受注案件", image: null },
+  { id: 10, title: "電子工作教室", category: "ワークショップ", image: null },
+  { id: 11, title: "3Dプリント試作", category: "受注案件", image: null },
+  { id: 12, title: "レーザー加工品", category: "製品", image: null },
+];
+
+const categories = ["すべて", "受注案件", "製品", "ワークショップ"];
+---
+
+<Layout title="実績 | 想造工房モノリエ">
+  <!-- ヘッダー -->
+  <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/images/logo.png" alt="想造工房モノリエ" class="h-20" />
+      </a>
+      <nav class="hidden md:flex gap-3 text-sm font-medium items-center">
+        <a href="/learn" class="px-4 py-2 rounded-full border-2 border-monolier-green text-monolier-green hover:bg-monolier-green hover:text-white transition">学ぶ</a>
+        <a href="/make" class="px-4 py-2 rounded-full border-2 border-monolier-teal text-monolier-teal hover:bg-monolier-teal hover:text-white transition">作る</a>
+        <a href="/shop" class="px-4 py-2 rounded-full border-2 border-monolier-coral text-monolier-coral hover:bg-monolier-coral hover:text-white transition">買う</a>
+        <a href="/order" class="px-4 py-2 rounded-full border-2 border-monolier-brown text-monolier-brown hover:bg-monolier-brown hover:text-white transition">頼む</a>
+        <a href="/works" class="px-4 py-2 rounded-full bg-monolier-accent text-white">実績</a>
+        <a href="/about" class="px-4 py-2 rounded-full border-2 border-gray-400 text-gray-600 hover:bg-gray-500 hover:text-white transition">私たちについて</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden p-2 text-monolier-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <nav class="flex flex-col px-4 py-2 text-sm">
+        <a href="/learn" class="py-3 text-monolier-green border-b border-gray-100">学ぶ</a>
+        <a href="/make" class="py-3 text-monolier-teal border-b border-gray-100">作る</a>
+        <a href="/shop" class="py-3 text-monolier-coral border-b border-gray-100">買う</a>
+        <a href="/order" class="py-3 text-monolier-brown border-b border-gray-100">頼む</a>
+        <a href="/works" class="py-3 text-monolier-accent font-bold border-b border-gray-100">実績</a>
+        <a href="/about" class="py-3 text-gray-600 border-b border-gray-100">私たちについて</a>
+        <a href="/contact" class="py-3 text-monolier-dark font-medium">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-32 pb-20">
+    <!-- ページタイトル -->
+    <section class="max-w-6xl mx-auto px-4 mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-monolier-dark mb-4">実績</h1>
+      <p class="text-gray-600">ワークショップ・製品・受注案件の一部をご紹介します</p>
+    </section>
+
+    <!-- CTA（上部） -->
+    <section class="max-w-6xl mx-auto px-4 mt-4 mb-12">
+      <div class="bg-monolier-brown/10 border-2 border-monolier-brown/30 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <p class="text-lg font-bold text-monolier-dark">「こんなの作れる？」にお応えします</p>
+          <p class="text-gray-600 text-sm mt-1">試作開発・受託加工・オーダーメイドなど</p>
+        </div>
+        <a href="/order" class="inline-block px-6 py-3 bg-monolier-brown text-white font-bold rounded-full hover:bg-monolier-brown/80 transition whitespace-nowrap">
+          詳しく見る
+        </a>
+      </div>
+    </section>
+
+    <!-- カテゴリフィルター -->
+    <section class="max-w-6xl mx-auto px-4 mb-8">
+      <div class="flex flex-wrap gap-3">
+        {categories.map((cat, index) => (
+          <button 
+            class={`filter-btn px-5 py-2 rounded-full font-medium transition ${index === 0 ? 'bg-monolier-accent text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+            data-category={cat}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- ギャラリー -->
+    <section class="max-w-6xl mx-auto px-4">
+      <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {works.map((work) => (
+          <div 
+            class="work-item group cursor-pointer" 
+            data-category={work.category}
+          >
+            <div class="aspect-square bg-monolier-light rounded-xl overflow-hidden relative">
+              {work.image ? (
+                <img src={work.image} alt={work.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-6xl bg-gradient-to-br from-gray-100 to-gray-200">
+                  📷
+                </div>
+              )}
+              <!-- オーバーレイ -->
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-end">
+                <div class="p-4 w-full translate-y-full group-hover:translate-y-0 transition duration-300">
+                  <span class="inline-block px-2 py-1 bg-white/90 text-xs font-medium rounded mb-2">
+                    {work.category}
+                  </span>
+                  <p class="text-white font-bold text-sm">{work.title}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-monolier-dark text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+          <p class="text-lg font-bold mb-2">想造工房モノリエ</p>
+          <p class="text-sm opacity-70">長野県上伊那郡箕輪町</p>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-6 text-sm opacity-80">
+          <a href="/learn" class="hover:opacity-100">学ぶ</a>
+          <a href="/make" class="hover:opacity-100">作る</a>
+          <a href="/shop" class="hover:opacity-100">買う</a>
+          <a href="/order" class="hover:opacity-100">頼む</a>
+          <a href="/works" class="hover:opacity-100">実績</a>
+          <a href="/about" class="hover:opacity-100">私たちについて</a>
+        </nav>
+      </div>
+      <div class="text-center mt-8 pt-8 border-t border-white/20">
+        <p class="text-xs opacity-50">© 2025 Monolier. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  // モバイルメニュー
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // カテゴリフィルター
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const workItems = document.querySelectorAll('.work-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // ボタンのアクティブ状態を更新
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-monolier-accent', 'text-white');
+        b.classList.add('bg-gray-100', 'text-gray-600');
+      });
+      btn.classList.remove('bg-gray-100', 'text-gray-600');
+      btn.classList.add('bg-monolier-accent', 'text-white');
+
+      // フィルタリング
+      const category = btn.getAttribute('data-category');
+      
+      workItems.forEach(item => {
+        if (category === 'すべて' || item.getAttribute('data-category') === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

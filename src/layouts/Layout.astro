@@ -16,11 +16,149 @@ const { title, description = '好きからはじめ、手を動かし、挑戦�
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="bg-monolier-cream text-gray-800">
-    <slot />
+  <body class="bg-monolier-cream text-monolier-dark">
+    <!-- ヘッダー -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/images/logo.png" alt="想造工房モノリエ" class="h-16 md:h-20" />
+        </a>
+        
+        <!-- PC版ナビ -->
+        <nav class="hidden lg:flex gap-2 font-medium items-center">
+          <a href="/about" class="px-3 py-2 text-monolier-dark border-b-2 border-monolier-gray/50 hover:border-monolier-brown transition">私たちについて</a>
+          <a href="/personal" class="px-3 py-2 text-monolier-dark border-b-2 border-monolier-green hover:bg-monolier-green/10 transition">個人の方へ</a>
+          <a href="/business" class="px-3 py-2 text-monolier-dark border-b-2 border-monolier-coral hover:bg-monolier-coral/10 transition">団体・事業者の方へ</a>
+          <a href="/join" class="px-3 py-2 text-monolier-dark border-b-2 border-monolier-gold hover:bg-monolier-gold/10 transition">応援する</a>
+          <a href="/works" class="px-3 py-2 text-monolier-dark border-b-2 border-monolier-gray/50 hover:border-monolier-brown transition">実績</a>
+          <a href="/contact" class="ml-2 px-5 py-2 bg-monolier-brown text-white rounded-full hover:bg-monolier-brown/90 transition">お問い合わせ</a>
+        </nav>
+        
+        <!-- モバイルメニューボタン -->
+        <button id="menu-btn" class="lg:hidden p-2 text-monolier-dark">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- モバイルメニュー -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+        <nav class="flex flex-col px-4 py-2 text-sm">
+          <a href="/about" class="py-3 text-monolier-gray border-b border-gray-100">私たちについて</a>
+          <a href="/works" class="py-3 text-monolier-gray border-b border-gray-100">実績</a>
+          
+          <!-- 個人の方へ -->
+          <div class="py-3 border-b border-gray-100">
+            <a href="/personal" class="text-monolier-green font-medium">個人の方へ</a>
+            <div class="flex gap-4 mt-2 ml-4 text-xs">
+              <a href="/learn" class="text-monolier-green">学ぶ</a>
+              <a href="/make" class="text-monolier-teal">作る</a>
+              <a href="/shop" class="text-monolier-coral">買う</a>
+              <a href="/order" class="text-monolier-brown">頼む</a>
+            </div>
+          </div>
+          
+          <!-- 団体・事業者の方へ -->
+          <div class="py-3 border-b border-gray-100">
+            <a href="/business" class="text-monolier-coral font-medium">団体・事業者の方へ</a>
+            <div class="flex flex-wrap gap-3 mt-2 ml-4 text-xs">
+              <a href="/business#development" class="text-monolier-coral">受託開発</a>
+              <a href="/business#novelty" class="text-monolier-coral">ノベルティ</a>
+              <a href="/business#diorama" class="text-monolier-coral">ジオラマ</a>
+              <a href="/business#measurement" class="text-monolier-coral">時間速度計測</a>
+            </div>
+          </div>
+          
+          <!-- 応援する -->
+          <div class="py-3 border-b border-gray-100">
+            <a href="/join" class="text-monolier-gold font-medium">応援する</a>
+            <div class="flex gap-4 mt-2 ml-4 text-xs">
+              <a href="/join#supporter" class="text-monolier-gold">バトン＆サポーター</a>
+              <a href="/join#work" class="text-monolier-gold">一緒に働く</a>
+            </div>
+          </div>
+          
+          <a href="/contact" class="py-3 text-monolier-brown font-medium">お問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-monolier-dark text-white py-12 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <!-- ロゴ・基本情報 -->
+          <div class="md:col-span-1">
+            <p class="text-lg font-bold mb-2">想造工房モノリエ</p>
+            <p class="text-sm opacity-70 mb-1">〒399-4601</p>
+            <p class="text-sm opacity-70 mb-3">長野県上伊那郡箕輪町<br>大字中箕輪13275-1</p>
+            <a href="mailto:info@monolier.jp" class="text-sm opacity-70 hover:opacity-100 transition">info@monolier.jp</a>
+          </div>
+          
+          <!-- 個人の方へ -->
+          <div>
+            <p class="font-medium mb-3 text-monolier-green">個人の方へ</p>
+            <nav class="flex flex-col gap-2 text-sm opacity-80">
+              <a href="/learn" class="hover:opacity-100">学ぶ</a>
+              <a href="/make" class="hover:opacity-100">作る</a>
+              <a href="/shop" class="hover:opacity-100">買う</a>
+              <a href="/order" class="hover:opacity-100">頼む</a>
+            </nav>
+          </div>
+          
+          <!-- 団体・事業者の方へ -->
+          <div>
+            <p class="font-medium mb-3 text-monolier-coral">団体・事業者の方へ</p>
+            <nav class="flex flex-col gap-2 text-sm opacity-80">
+              <a href="/business#development" class="hover:opacity-100">受託開発</a>
+              <a href="/business#novelty" class="hover:opacity-100">ノベルティ</a>
+              <a href="/business#diorama" class="hover:opacity-100">ジオラマ</a>
+              <a href="/business#measurement" class="hover:opacity-100">時間速度計測</a>
+            </nav>
+          </div>
+          
+          <!-- その他 -->
+          <div>
+            <p class="font-medium mb-3">その他</p>
+            <nav class="flex flex-col gap-2 text-sm opacity-80">
+              <a href="/about" class="hover:opacity-100">私たちについて</a>
+              <a href="/works" class="hover:opacity-100">実績</a>
+              <a href="/join" class="hover:opacity-100">応援する</a>
+              <a href="/contact" class="hover:opacity-100">お問い合わせ</a>
+            </nav>
+          </div>
+        </div>
+        
+        <div class="text-center pt-8 border-t border-white/20">
+          <p class="text-xs opacity-50">© 2025 想造工房モノリエ. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 
 <style is:global>
   @import '../styles/global.css';
 </style>
+
+<script>
+  // モバイルメニュー
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+  
+  // メニュークリックで閉じる
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

@@ -3,298 +3,298 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="想造工房モノリエ | 長野県箕輪町のものづくり工房">
-  <!-- ヘッダー -->
-  <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/images/logo.png" alt="想造工房モノリエ" class="h-10" />
-      </a>
-      <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#about" class="hover:text-monolier-brown transition">モノリエとは</a>
-        <a href="#services" class="hover:text-monolier-brown transition">できること</a>
-        <a href="#products" class="hover:text-monolier-brown transition">組箱シリーズ</a>
-        <a href="#contact" class="hover:text-monolier-brown transition">お問い合わせ</a>
-      </nav>
-      <!-- モバイルメニューボタン -->
-      <button id="menu-btn" class="md:hidden p-2">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-    <!-- モバイルメニュー -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-      <nav class="flex flex-col px-4 py-2">
-        <a href="#about" class="py-2 hover:text-monolier-brown">モノリエとは</a>
-        <a href="#services" class="py-2 hover:text-monolier-brown">できること</a>
-        <a href="#products" class="py-2 hover:text-monolier-brown">組箱シリーズ</a>
-        <a href="#contact" class="py-2 hover:text-monolier-brown">お問い合わせ</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <!-- ヒーロー -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-monolier-brown to-monolier-dark text-white pt-16">
-      <div class="text-center px-4">
-        <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-relaxed">
-          好きからはじめ、<br />
-          手を動かし、<br />
-          挑戦を重ねて、<br />
-          明日の自信へ。
-        </h1>
-        <p class="text-lg md:text-xl opacity-90 mb-8">想造工房モノリエ</p>
-        <a href="#about" class="inline-block bg-white text-monolier-brown px-8 py-3 rounded-full font-medium hover:bg-monolier-accent hover:text-white transition">
-          詳しく見る
+  <!-- 1. ヒーロー -->
+  <section class="pt-24 md:pt-28 pb-12 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <!-- ヒーロー画像 -->
+      <div class="rounded-2xl overflow-hidden">
+        <img src="/images/hero-workshop.png" alt="モノリエ工房" class="w-full" />
+      </div>
+      
+      <!-- 紹介文 2カラム -->
+      <div class="grid md:grid-cols-2 gap-8 mt-8">
+        <!-- 個人向け -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 border-t-4 border-monolier-green flex flex-col">
+          <p class="text-monolier-green font-medium mb-4">個人の方へ</p>
+          <div class="text-lg text-monolier-dark leading-relaxed flex-grow">
+            <p class="mb-3">「こんなの作れたらいいな」<br>そう思ったこと、ありませんか？</p>
+            <ul class="text-base text-gray-600 mb-3 space-y-1">
+              <li>・道具がない</li>
+              <li>・やり方がわからない</li>
+              <li>・一人じゃ不安</li>
+            </ul>
+            <p class="mb-4">大丈夫。<br>
+            <span class="highlight-green">一緒に考えて、一緒に作りましょう。</span></p>
+            
+            <div class="text-sm text-gray-600 space-y-1 pl-4 border-l-2 border-monolier-green/30">
+              <p><span class="font-medium text-monolier-dark">学ぶ：</span>ワークショップ・ものづくり塾</p>
+              <p><span class="font-medium text-monolier-dark">作る：</span>レンタル工房</p>
+              <p><span class="font-medium text-monolier-dark">買う：</span>オンラインショップ</p>
+              <p><span class="font-medium text-monolier-dark">頼む：</span>オーダーメイド制作</p>
+            </div>
+          </div>
+          <div class="text-center mt-6">
+            <a href="/personal" class="inline-block px-5 py-2 bg-monolier-green text-white text-sm font-medium rounded-full hover:bg-monolier-green/90 transition">詳しく見る</a>
+          </div>
+        </div>
+        
+        <!-- 事業者向け -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 border-t-4 border-monolier-coral flex flex-col">
+          <p class="text-monolier-coral font-medium mb-4">団体・事業者の方へ</p>
+          <div class="text-lg text-monolier-dark leading-relaxed flex-grow">
+            <p class="mb-3">「これ、どこに相談すればいいんだろう」<br>そう思ったこと、ありませんか？</p>
+            <ul class="text-base text-gray-600 mb-3 space-y-1">
+              <li>・試作</li>
+              <li>・小ロット</li>
+              <li>・オリジナルグッズ</li>
+            </ul>
+            <p class="mb-4">ものづくりの困りごと、<br>
+            <span class="highlight-coral">まずは気軽にご相談ください。</span></p>
+            
+            <div class="text-sm text-gray-600 space-y-1 pl-4 border-l-2 border-monolier-coral/30">
+              <p><span class="font-medium text-monolier-dark">受託開発：</span>試作・小ロット製造</p>
+              <p><span class="font-medium text-monolier-dark">ノベルティ：</span>企業向けオリジナルグッズ</p>
+              <p><span class="font-medium text-monolier-dark">ジオラマ：</span>展示会・博物館向け</p>
+              <p><span class="font-medium text-monolier-dark">計測器：</span>時間・速度計測システム</p>
+            </div>
+          </div>
+          <div class="text-center mt-6">
+            <a href="/business" class="inline-block px-5 py-2 bg-monolier-coral text-white text-sm font-medium rounded-full hover:bg-monolier-coral/90 transition">詳しく見る</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 作業風景 2枚 -->
+      <div class="grid md:grid-cols-2 gap-4 mt-8">
+        <div class="text-center">
+          <div class="rounded-xl overflow-hidden">
+            <img src="/images/scene-workshop-2.png" alt="PC分解作業" class="w-full h-full object-cover" />
+          </div>
+          <p class="text-sm text-monolier-dark mt-2">【ものづくり塾】PC分解に挑戦</p>
+        </div>
+        <div class="text-center">
+          <div class="rounded-xl overflow-hidden">
+            <img src="/images/scene-workshop.png" alt="マイコンカーラリー組み立て" class="w-full h-full object-cover" />
+          </div>
+          <p class="text-sm text-monolier-dark mt-2">【社員研修】マイコンカーラリーへの挑戦</p>
+        </div>
+      </div>
+      
+      <p class="text-center text-xl md:text-2xl text-monolier-dark mt-10">
+        お子様から大人まで、<br class="md:hidden">ものづくりや製品づくりを<span class="highlight-brown">一緒に楽しみましょう。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. 私たちの想い -->
+  <section class="py-16 bg-monolier-light">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center">
+        <p class="text-monolier-brown font-medium mb-2">私たちの想い</p>
+        <h2 class="text-xl md:text-2xl font-bold text-monolier-dark mb-6">なぜモノリエは「教える・作る・売る」をやるのか？</h2>
+        
+        <div class="bg-white rounded-2xl p-6 md:p-8 mb-6">
+          <p class="text-gray-600">
+            モノリエは、挑戦する人を支え、<br class="md:hidden">支えられた人が次の人を支える。<br>
+            そんな<span class="font-medium text-monolier-dark">「応援の循環」</span>を目指しています。
+          </p>
+        </div>
+        
+        <a href="/about" class="inline-block px-6 py-3 bg-monolier-brown text-white font-medium rounded-full hover:bg-monolier-brown/90 transition">
+          モノリエの想いを見る
         </a>
       </div>
-    </section>
-
-    <!-- モノリエとは -->
-    <section id="about" class="py-20 px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-monolier-dark">
-          モノリエとは
-        </h2>
-        
-        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-12">
-          <p class="text-lg leading-relaxed text-gray-700 mb-6">
-            好きなことに夢中になる時、人は自然に手を動かし、挑戦する。<br />
-            その積み重ねが、明日を生きる自信になる。
-          </p>
-          <p class="text-lg leading-relaxed text-gray-700">
-            誰もが全力で挑戦できる場所、そして挑戦する人を応援できる場所。<br />
-            それが想造工房モノリエです。
-          </p>
-        </div>
-
-        <!-- 名前の由来 -->
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-monolier-light rounded-xl p-6">
-            <h3 class="font-bold text-monolier-brown mb-4 text-lg">「想造」の意味</h3>
-            <div class="flex gap-4">
-              <div class="text-center">
-                <span class="text-3xl">🧡</span>
-                <p class="font-bold mt-2">想</p>
-                <p class="text-sm text-gray-600">想いで挑戦を後押し</p>
-              </div>
-              <div class="text-center">
-                <span class="text-3xl">🏗️</span>
-                <p class="font-bold mt-2">造</p>
-                <p class="text-sm text-gray-600">みんなで場所を造る</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-monolier-light rounded-xl p-6">
-            <h3 class="font-bold text-monolier-brown mb-4 text-lg">「モノリエ」の意味</h3>
-            <div class="flex gap-4">
-              <div class="text-center">
-                <span class="text-3xl">🔧</span>
-                <p class="font-bold mt-2">モノづくり</p>
-                <p class="text-sm text-gray-600">技術・創造</p>
-              </div>
-              <div class="text-center">
-                <span class="text-3xl">🎨</span>
-                <p class="font-bold mt-2">アトリエ</p>
-                <p class="text-sm text-gray-600">芸術・感性</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- できること -->
-    <section id="services" class="py-20 px-4 bg-monolier-light">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-monolier-dark">
-          できること
-        </h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- 学ぶ -->
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="text-4xl mb-4">📚</div>
-            <h3 class="font-bold text-xl mb-3 text-monolier-dark">学ぶ</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              ものづくり塾・ワークショップで、レーザー加工、3Dプリント、電子工作などを学べます。カリキュラムなし、やりたいことから始められます。
-            </p>
-          </div>
-          
-          <!-- 作る -->
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="text-4xl mb-4">🛠️</div>
-            <h3 class="font-bold text-xl mb-3 text-monolier-dark">作る</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              工房の設備を使って、あなたのアイデアを形にできます。レーザーカッター、3Dプリンタ、電子工作機材を完備。
-            </p>
-          </div>
-          
-          <!-- 買う -->
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="text-4xl mb-4">🛒</div>
-            <h3 class="font-bold text-xl mb-3 text-monolier-dark">買う</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              オリジナル製品「組箱シリーズ」をはじめ、工房で生まれた製品を購入できます。ライセンス販売も。
-            </p>
-          </div>
-          
-          <!-- 頼む -->
-          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <div class="text-4xl mb-4">🤝</div>
-            <h3 class="font-bold text-xl mb-3 text-monolier-dark">頼む</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              試作開発、レーザー加工、電子機器開発など、ものづくりのご相談を承ります。複合的な案件も対応可能。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 組箱シリーズ -->
-    <section id="products" class="py-20 px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-monolier-dark">
-          組箱シリーズ
-        </h2>
-        
-        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <div class="text-center mb-8">
-            <span class="text-6xl">📦</span>
-          </div>
-          <h3 class="text-xl font-bold text-center mb-4 text-monolier-brown">
-            モジュラー式コレクションケース
-          </h3>
-          <p class="text-gray-600 text-center mb-8 leading-relaxed">
-            あなたのコレクションに合わせて、自由に組み合わせられるケースシステム。<br />
-            鉄道模型、ミニカー、フィギュアなど、大切なものを美しく飾れます。
-          </p>
-          <div class="text-center">
-            <a href="#contact" class="inline-block bg-monolier-brown text-white px-8 py-3 rounded-full font-medium hover:bg-monolier-dark transition">
-              お問い合わせ
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 成長の循環（壱環） -->
-    <section class="py-20 px-4 bg-gray-900 text-white">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">壱環 ─ IKKAN</h2>
-        <p class="opacity-80 mb-12">成長の循環を象徴するシンボル</p>
-        
-        <div class="flex justify-center gap-8 md:gap-12 mb-12 flex-wrap">
-          <div class="text-center">
-            <p class="text-4xl font-bold mb-2">壱</p>
-            <p class="text-sm opacity-80">唯一無二<br />はじまり</p>
-          </div>
-          <div class="text-2xl self-center opacity-50">＋</div>
-          <div class="text-center">
-            <p class="text-4xl font-bold mb-2">環</p>
-            <p class="text-sm opacity-80">循環<br />つながり</p>
-          </div>
-        </div>
-        
-        <!-- 5ステージ -->
-        <div class="flex flex-wrap justify-center gap-4">
-          <div class="bg-white/10 rounded-lg px-4 py-3">
-            <p class="font-bold">① 出会う</p>
-            <p class="text-xs opacity-70">やってみたい</p>
-          </div>
-          <div class="text-xl self-center opacity-50">→</div>
-          <div class="bg-white/10 rounded-lg px-4 py-3">
-            <p class="font-bold">② 作る</p>
-            <p class="text-xs opacity-70">できた！</p>
-          </div>
-          <div class="text-xl self-center opacity-50">→</div>
-          <div class="bg-white/10 rounded-lg px-4 py-3">
-            <p class="font-bold">③ できる</p>
-            <p class="text-xs opacity-70">自分でできる</p>
-          </div>
-          <div class="text-xl self-center opacity-50">→</div>
-          <div class="bg-white/10 rounded-lg px-4 py-3">
-            <p class="font-bold">④ 生み出す</p>
-            <p class="text-xs opacity-70">届けたい</p>
-          </div>
-          <div class="text-xl self-center opacity-50">→</div>
-          <div class="bg-white/10 rounded-lg px-4 py-3">
-            <p class="font-bold">⑤ 恩送り</p>
-            <p class="text-xs opacity-70">つなげたい</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- お問い合わせ -->
-    <section id="contact" class="py-20 px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-monolier-dark">
-          お問い合わせ
-        </h2>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- 連絡先 -->
-          <div class="bg-white rounded-xl shadow-lg p-8">
-            <h3 class="font-bold text-lg mb-6 text-monolier-brown">連絡先</h3>
-            <div class="space-y-4">
-              <div>
-                <p class="text-sm text-gray-500">メール</p>
-                <a href="mailto:tomohiro.k@monolier.jp" class="text-monolier-brown hover:underline">
-                  tomohiro.k@monolier.jp
-                </a>
-              </div>
-              <div>
-                <p class="text-sm text-gray-500">電話</p>
-                <a href="tel:090-5891-9521" class="text-monolier-brown hover:underline">
-                  090-5891-9521
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- アクセス -->
-          <div class="bg-white rounded-xl shadow-lg p-8">
-            <h3 class="font-bold text-lg mb-6 text-monolier-brown">アクセス</h3>
-            <div class="space-y-4">
-              <div>
-                <p class="text-sm text-gray-500">所在地</p>
-                <p>〒399-4601<br />長野県上伊那郡箕輪町大字中箕輪13275-1</p>
-              </div>
-              <div>
-                <p class="text-sm text-gray-500">代表者</p>
-                <p>笠川 知洋</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- フッター -->
-  <footer class="bg-monolier-dark text-white py-12 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-lg font-bold mb-2">想造工房モノリエ</p>
-      <p class="text-sm opacity-70 mb-6">長野県上伊那郡箕輪町</p>
-      <p class="text-xs opacity-50">© 2025 Monolier. All rights reserved.</p>
     </div>
-  </footer>
-</Layout>
+  </section>
 
-<script>
-  // モバイルメニュー
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  menuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-  });
-  
-  // メニュークリックで閉じる
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-    });
-  });
-</script>
+  <!-- 3. ご支援・参加 -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <p class="text-lg md:text-xl text-monolier-gold font-bold mb-2">モノリエを応援する</p>
+        <h2 class="text-xl md:text-2xl font-bold text-monolier-dark">一緒に「ものづくりの場」を育てませんか？</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <!-- バトン＆サポーター -->
+        <a href="/join#supporter" class="group block bg-monolier-light rounded-2xl p-6 hover:shadow-lg transition border-2 border-transparent hover:border-monolier-gold">
+          <div class="text-center">
+            <span class="text-4xl mb-3 block">🎗️</span>
+            <h3 class="text-lg font-bold text-monolier-gold mb-2">バトン＆サポーター</h3>
+            <p class="text-sm text-gray-600">
+              スポットまたは継続支援で、<br>子どもたちの体験を支えます
+            </p>
+          </div>
+        </a>
+        
+        <!-- 一緒に働く -->
+        <a href="/join#work" class="group block bg-monolier-light rounded-2xl p-6 hover:shadow-lg transition border-2 border-transparent hover:border-monolier-gold">
+          <div class="text-center">
+            <span class="text-4xl mb-3 block">🤝</span>
+            <h3 class="text-lg font-bold text-monolier-gold mb-2">一緒に働く</h3>
+            <p class="text-sm text-gray-600">
+              スタッフ・インターン・<br>ボランティア募集中
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 実績ハイライト -->
+  <section class="py-16 bg-monolier-light">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-xl md:text-2xl font-bold text-monolier-dark mb-2">実績</h2>
+        <p class="text-gray-600 text-sm">ワークショップ・製品・受注案件の一部</p>
+      </div>
+      
+      <!-- 写真グリッド（6枚） -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+        <div class="group">
+          <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
+            <img src="/images/work-juku-pc.jpg" alt="ものづくり塾" class="w-full h-full object-cover group-hover:scale-105 transition" />
+          </div>
+          <div class="mt-2 text-center">
+            <span class="px-2 py-0.5 bg-monolier-green/10 text-monolier-green text-xs rounded-full">教育</span>
+            <p class="text-sm text-monolier-dark mt-1">ものづくり塾</p>
+          </div>
+        </div>
+        <div class="group">
+          <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
+            <img src="/images/work-juku-laser.jpg" alt="レーザー加工体験" class="w-full h-full object-cover group-hover:scale-105 transition" />
+          </div>
+          <div class="mt-2 text-center">
+            <span class="px-2 py-0.5 bg-monolier-green/10 text-monolier-green text-xs rounded-full">教育</span>
+            <p class="text-sm text-monolier-dark mt-1">レーザー加工体験</p>
+          </div>
+        </div>
+        <div class="group">
+          <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
+            <img src="/images/work-kumibako.jpg" alt="組箱シリーズ" class="w-full h-full object-cover group-hover:scale-105 transition" />
+          </div>
+          <div class="mt-2 text-center">
+            <span class="px-2 py-0.5 bg-monolier-coral/10 text-monolier-coral text-xs rounded-full">製品</span>
+            <p class="text-sm text-monolier-dark mt-1">組箱シリーズ</p>
+          </div>
+        </div>
+        <div class="group">
+          <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
+            <img src="/images/work-collection.png" alt="コレクションケース" class="w-full h-full object-cover group-hover:scale-105 transition" />
+          </div>
+          <div class="mt-2 text-center">
+            <span class="px-2 py-0.5 bg-monolier-coral/10 text-monolier-coral text-xs rounded-full">製品</span>
+            <p class="text-sm text-monolier-dark mt-1">コレクションケース</p>
+          </div>
+        </div>
+        <div class="group">
+          <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
+            <img src="/images/work-robot.jpg" alt="農業ロボット開発" class="w-full h-full object-cover group-hover:scale-105 transition" />
+          </div>
+          <div class="mt-2 text-center">
+            <span class="px-2 py-0.5 bg-monolier-navy/10 text-monolier-navy text-xs rounded-full">受託</span>
+            <p class="text-sm text-monolier-dark mt-1">農業ロボット開発</p>
+          </div>
+        </div>
+        <div class="group">
+          <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
+            <img src="/images/work-diorama.jpg" alt="ジオラマ製作" class="w-full h-full object-cover group-hover:scale-105 transition" />
+          </div>
+          <div class="mt-2 text-center">
+            <span class="px-2 py-0.5 bg-monolier-navy/10 text-monolier-navy text-xs rounded-full">受託</span>
+            <p class="text-sm text-monolier-dark mt-1">ジオラマ製作</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="/works" class="inline-block px-6 py-3 bg-monolier-gray text-white rounded-full hover:bg-monolier-dark transition">
+          もっと見る →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. アクセス・お問い合わせ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-xl md:text-2xl font-bold text-monolier-dark">アクセス・お問い合わせ</h2>
+      </div>
+      
+      <!-- Googleマップ + 営業情報 -->
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- マップ（2カラム分） -->
+        <div class="md:col-span-2 rounded-xl overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3220.5!2d137.9819!3d35.9156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c8a0000000000%3A0x0!2z6ZW36YeO55yM5LiK5LyK6YKj6YOh566V6Lyq55S65aSn5a2X5Lit566V6Lyq77yR77yT77yS77yX77yV4oiS77yR!5e0!3m2!1sja!2sjp!4v1700000000000"
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 280px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        
+        <!-- 営業情報 -->
+        <div class="bg-monolier-light rounded-xl p-6">
+          <h3 class="font-bold text-monolier-dark mb-4">営業情報</h3>
+          <div class="space-y-4 text-sm">
+            <div>
+              <p class="text-gray-500 text-xs mb-1">営業日</p>
+              <p class="text-monolier-dark font-medium">木・金・土</p>
+            </div>
+            <div>
+              <p class="text-gray-500 text-xs mb-1">店舗</p>
+              <p class="text-monolier-dark">10:00〜13:00 / 14:00〜18:00</p>
+              <p class="text-monolier-coral text-xs mt-1">※ 現在準備中</p>
+            </div>
+            <div>
+              <p class="text-gray-500 text-xs mb-1">塾（木・金）</p>
+              <p class="text-monolier-dark">19:00〜21:00</p>
+            </div>
+            <div class="pt-2 border-t border-gray-200">
+              <p class="text-gray-600 text-xs">🚗 駐車場あり</p>
+              <p class="text-gray-600 text-xs">予約なしでもOK</p>
+              <p class="text-gray-400 text-xs mt-2">※ 状況によりお休みの場合あり</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SNS 3カラム -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/sk.monolier" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center hover:shadow-lg transition group">
+          <p class="font-bold text-monolier-dark mb-1">Instagram</p>
+          <p class="text-xs text-gray-500 mb-4">工房・作品紹介</p>
+          <img src="/images/sk.monolier_qr.png" alt="Instagram QR" class="w-40 h-40 mx-auto group-hover:scale-105 transition" />
+        </a>
+        
+        <!-- Threads -->
+        <a href="https://www.threads.com/@sk.monolier" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center hover:shadow-lg transition group">
+          <p class="font-bold text-monolier-dark mb-1">Threads</p>
+          <p class="text-xs text-gray-500 mb-4">塾の様子配信</p>
+          <img src="/images/threads_qr.png" alt="Threads QR" class="w-40 h-40 mx-auto group-hover:scale-105 transition" />
+        </a>
+        
+        <!-- 公式LINE -->
+        <a href="https://lin.ee/OvEhQNp" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center hover:shadow-lg transition group">
+          <p class="font-bold text-monolier-dark mb-1">公式LINE</p>
+          <p class="text-xs text-gray-500 mb-4">お問い合わせはこちら</p>
+          <img src="/images/L_gainfriends_2dbarcodes_GW.png" alt="LINE QR" class="w-40 h-40 mx-auto group-hover:scale-105 transition" />
+        </a>
+      </div>
+      
+      <div class="text-center">
+        <a href="#" class="inline-block px-8 py-4 bg-monolier-brown text-white font-bold rounded-full hover:bg-monolier-brown/90 transition">
+          お問い合わせフォームへ
+        </a>
+        <p class="text-xs text-gray-500 mt-2">※Googleフォームが開きます</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>
