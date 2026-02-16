@@ -4,8 +4,191 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="想造工房モノリエ | 長野県箕輪町のものづくり工房">
 
+  <!-- 浮遊する装飾 -->
+  <div class="floating-decorations">
+    <div class="floating-item leaf" style="left: 5%; animation-duration: 18s; animation-delay: 0s;">
+      <div class="sway" style="animation-duration: 3s;">
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4C16 4 8 8 8 18C8 22 10 26 16 28C22 26 24 22 24 18C24 8 16 4 16 4Z" opacity="0.9"/>
+          <path d="M16 8V24" stroke="#5a7a4a" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="floating-item leaf" style="left: 18%; animation-duration: 22s; animation-delay: -4s;">
+      <div class="sway" style="animation-duration: 4s;">
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4C16 4 8 8 8 18C8 22 10 26 16 28C22 26 24 22 24 18C24 8 16 4 16 4Z" opacity="0.9"/>
+          <path d="M16 8V24" stroke="#5a7a4a" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="floating-item gear" style="left: 32%; animation-duration: 25s; animation-delay: -8s;">
+      <div class="sway" style="animation-duration: 5s;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L22 11L27 9L25 14L30 16L25 18L27 23L22 21L20 26L18 21L13 23L15 18L10 16L15 14L13 9L18 11L20 6Z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="20" cy="16" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="floating-item leaf" style="left: 48%; animation-duration: 20s; animation-delay: -2s;">
+      <div class="sway" style="animation-duration: 2.5s;">
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4C16 4 8 8 8 18C8 22 10 26 16 28C22 26 24 22 24 18C24 8 16 4 16 4Z" opacity="0.9"/>
+          <path d="M16 8V24" stroke="#5a7a4a" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="floating-item gear" style="left: 62%; animation-duration: 28s; animation-delay: -12s;">
+      <div class="sway" style="animation-duration: 4s;">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L22 11L27 9L25 14L30 16L25 18L27 23L22 21L20 26L18 21L13 23L15 18L10 16L15 14L13 9L18 11L20 6Z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="20" cy="16" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="floating-item leaf" style="left: 78%; animation-duration: 19s; animation-delay: -6s;">
+      <div class="sway" style="animation-duration: 3.5s;">
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4C16 4 8 8 8 18C8 22 10 26 16 28C22 26 24 22 24 18C24 8 16 4 16 4Z" opacity="0.9"/>
+          <path d="M16 8V24" stroke="#5a7a4a" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="floating-item leaf" style="left: 90%; animation-duration: 24s; animation-delay: -10s;">
+      <div class="sway" style="animation-duration: 3s;">
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4C16 4 8 8 8 18C8 22 10 26 16 28C22 26 24 22 24 18C24 8 16 4 16 4Z" opacity="0.9"/>
+          <path d="M16 8V24" stroke="#5a7a4a" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .floating-decorations {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .floating-item {
+      position: absolute;
+      bottom: -60px;
+      animation: float-up linear infinite;
+    }
+
+    .sway {
+      animation: sway ease-in-out infinite;
+    }
+
+    .floating-item.leaf {
+      width: 28px;
+      height: 28px;
+      color: #7cb342;
+      opacity: 0.35;
+    }
+
+    .floating-item.leaf:nth-child(2) {
+      width: 22px;
+      height: 22px;
+      color: #8bc34a;
+    }
+
+    .floating-item.leaf:nth-child(4) {
+      width: 32px;
+      height: 32px;
+      color: #689f38;
+    }
+
+    .floating-item.leaf:nth-child(6) {
+      width: 20px;
+      height: 20px;
+    }
+
+    .floating-item.gear {
+      width: 36px;
+      height: 36px;
+      color: #C9A84C;
+      opacity: 0.3;
+    }
+
+    .floating-item.gear:nth-child(5) {
+      width: 28px;
+      height: 28px;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.35;
+      }
+      50% {
+        opacity: 0.4;
+      }
+      90% {
+        opacity: 0.35;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(180deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes sway {
+      0%, 100% {
+        transform: translateX(-30px);
+      }
+      50% {
+        transform: translateX(30px);
+      }
+    }
+
+    /* モバイルでは控えめに */
+    @media (max-width: 768px) {
+      .floating-item {
+        opacity: 0.25;
+      }
+      .floating-item:nth-child(2),
+      .floating-item:nth-child(5) {
+        display: none;
+      }
+    }
+
+    /* ソフトなセクション区切り */
+    .section-soft {
+      position: relative;
+    }
+    .section-soft::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.03), transparent);
+      pointer-events: none;
+    }
+
+    /* カードホバーアニメーション */
+    .card-hover {
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px) rotate(0.5deg);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+  </style>
+
   <!-- 1. ヒーロー -->
-  <section class="pt-24 md:pt-28 pb-12 bg-white">
+  <section class="pt-24 md:pt-28 pb-12 bg-white/90">
     <div class="max-w-5xl mx-auto px-4">
       <!-- ヒーロー画像 -->
       <div class="rounded-2xl overflow-hidden">
@@ -15,7 +198,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- 紹介文 2カラム -->
       <div class="grid md:grid-cols-2 gap-8 mt-8">
         <!-- 個人向け -->
-        <div class="bg-white rounded-2xl p-6 md:p-8 border-t-4 border-monolier-green flex flex-col">
+        <a href="/personal" class="bg-white rounded-2xl p-6 md:p-8 border-t-4 border-monolier-green flex flex-col card-hover">
           <p class="text-monolier-green font-medium mb-4">個人の方へ</p>
           <div class="text-lg text-monolier-dark leading-relaxed flex-grow">
             <p class="mb-3">「こんなの作れたらいいな」<br>そう思ったこと、ありませんか？</p>
@@ -27,20 +210,48 @@ import Layout from '../layouts/Layout.astro';
             <p class="mb-4">大丈夫。<br>
             <span class="highlight-green">一緒に考えて、一緒に作りましょう。</span></p>
             
-            <div class="text-sm text-gray-600 space-y-1 pl-4 border-l-2 border-monolier-green/30">
-              <p><span class="font-medium text-monolier-dark">学ぶ：</span>ワークショップ・ものづくり塾</p>
-              <p><span class="font-medium text-monolier-dark">作る：</span>レンタル工房</p>
-              <p><span class="font-medium text-monolier-dark">買う：</span>オンラインショップ</p>
-              <p><span class="font-medium text-monolier-dark">頼む：</span>オーダーメイド制作</p>
+            <div class="text-sm text-gray-600 space-y-2 pl-4 border-l-2 border-monolier-green/30">
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 6.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/>
+                  <path d="M12 2C8 2 4 6 4 12s4 10 8 10 8-4 8-10-4-10-8-10z" opacity="0.3" fill="currentColor" stroke="none"/>
+                  <circle cx="12" cy="9" r="6"/>
+                  <path d="M12 15v5M9 18h6"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">学ぶ：</span>ワークショップ・ものづくり塾</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">作る：</span>レンタル工房</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">買う：</span>オンラインショップ</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                  <circle cx="12" cy="10" r="1" fill="currentColor"/>
+                  <circle cx="8" cy="10" r="1" fill="currentColor"/>
+                  <circle cx="16" cy="10" r="1" fill="currentColor"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">頼む：</span>オーダーメイド制作</span>
+              </p>
             </div>
           </div>
           <div class="text-center mt-6">
-            <a href="/personal" class="inline-block px-5 py-2 bg-monolier-green text-white text-sm font-medium rounded-full hover:bg-monolier-green/90 transition">詳しく見る</a>
+            <span class="inline-block px-5 py-2 bg-monolier-green text-white text-sm font-medium rounded-full">詳しく見る</span>
           </div>
-        </div>
+        </a>
         
         <!-- 事業者向け -->
-        <div class="bg-white rounded-2xl p-6 md:p-8 border-t-4 border-monolier-coral flex flex-col">
+        <a href="/business" class="bg-white rounded-2xl p-6 md:p-8 border-t-4 border-monolier-coral flex flex-col card-hover">
           <p class="text-monolier-coral font-medium mb-4">団体・事業者の方へ</p>
           <div class="text-lg text-monolier-dark leading-relaxed flex-grow">
             <p class="mb-3">「これ、どこに相談すればいいんだろう」<br>そう思ったこと、ありませんか？</p>
@@ -52,21 +263,50 @@ import Layout from '../layouts/Layout.astro';
             <p class="mb-4">ものづくりの困りごと、<br>
             <span class="highlight-coral">まずは気軽にご相談ください。</span></p>
             
-            <div class="text-sm text-gray-600 space-y-1 pl-4 border-l-2 border-monolier-coral/30">
-              <p><span class="font-medium text-monolier-dark">受託開発：</span>試作・小ロット製造</p>
-              <p><span class="font-medium text-monolier-dark">ノベルティ：</span>企業向けオリジナルグッズ</p>
-              <p><span class="font-medium text-monolier-dark">ジオラマ：</span>展示会・博物館向け</p>
-              <p><span class="font-medium text-monolier-dark">計測器：</span>時間・速度計測システム</p>
+            <div class="text-sm text-gray-600 space-y-2 pl-4 border-l-2 border-monolier-coral/30">
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-coral flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">受託開発：</span>試作・小ロット製造</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-coral flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6"/>
+                  <path d="M12 3v12"/>
+                  <path d="M12 3l4 4M12 3L8 7"/>
+                  <rect x="4" y="8" width="16" height="4" rx="1"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">ノベルティ：</span>企業向けオリジナルグッズ</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-coral flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18"/>
+                  <path d="M5 21V7l8-4v18"/>
+                  <path d="M19 21V11l-6-4"/>
+                  <path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">ジオラマ：</span>展示会・博物館向け</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-monolier-coral flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <span><span class="font-medium text-monolier-dark">計測器：</span>時間・速度計測システム</span>
+              </p>
             </div>
           </div>
           <div class="text-center mt-6">
-            <a href="/business" class="inline-block px-5 py-2 bg-monolier-coral text-white text-sm font-medium rounded-full hover:bg-monolier-coral/90 transition">詳しく見る</a>
+            <span class="inline-block px-5 py-2 bg-monolier-coral text-white text-sm font-medium rounded-full">詳しく見る</span>
           </div>
-        </div>
+        </a>
       </div>
       
       <!-- 作業風景 2枚 -->
-      <div class="grid md:grid-cols-2 gap-4 mt-8">
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
         <div class="text-center">
           <div class="rounded-xl overflow-hidden">
             <img src="/images/scene-workshop-2.png" alt="PC分解作業" class="w-full h-full object-cover" />
@@ -88,7 +328,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- 2. 私たちの想い -->
-  <section class="py-16 bg-monolier-light">
+  <section class="py-16 bg-monolier-light section-soft">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center">
         <p class="text-lg md:text-xl text-monolier-brown font-bold mb-2">私たちの想い</p>
@@ -109,7 +349,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- 3. ご支援・参加 -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-white/90 section-soft">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-8">
         <p class="text-lg md:text-xl text-monolier-gold font-bold mb-2">モノリエを応援する</p>
@@ -118,9 +358,15 @@ import Layout from '../layouts/Layout.astro';
       
       <div class="grid md:grid-cols-2 gap-6">
         <!-- バトン＆サポーター -->
-        <a href="/join#supporter" class="group block bg-monolier-light rounded-2xl p-6 hover:shadow-lg transition border-2 border-transparent hover:border-monolier-gold">
+        <a href="/join#supporter" class="group block bg-monolier-light rounded-2xl p-6 border-2 border-transparent hover:border-monolier-gold card-hover">
           <div class="text-center">
-            <span class="text-4xl mb-3 block">🎗️</span>
+            <div class="w-16 h-16 mx-auto mb-3 bg-monolier-gold/10 rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-monolier-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor" opacity="0.2"/>
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                <path d="M7 13l3 3 7-7" stroke-width="2"/>
+              </svg>
+            </div>
             <h3 class="text-lg font-bold text-monolier-gold mb-2">バトン＆サポーター</h3>
             <p class="text-sm text-gray-600">
               スポットまたは継続支援で、<br>子どもたちの体験を支えます
@@ -129,9 +375,18 @@ import Layout from '../layouts/Layout.astro';
         </a>
         
         <!-- 一緒に働く -->
-        <a href="/join#work" class="group block bg-monolier-light rounded-2xl p-6 hover:shadow-lg transition border-2 border-transparent hover:border-monolier-gold">
+        <a href="/join#work" class="group block bg-monolier-light rounded-2xl p-6 border-2 border-transparent hover:border-monolier-gold card-hover">
           <div class="text-center">
-            <span class="text-4xl mb-3 block">🤝</span>
+            <div class="w-16 h-16 mx-auto mb-3 bg-monolier-gold/10 rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-monolier-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="7" r="4" fill="currentColor" opacity="0.2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/>
+                <circle cx="17" cy="7" r="3" fill="currentColor" opacity="0.2"/>
+                <circle cx="17" cy="7" r="3"/>
+                <path d="M21 21v-2a3 3 0 00-2-2.83"/>
+              </svg>
+            </div>
             <h3 class="text-lg font-bold text-monolier-gold mb-2">一緒に働く</h3>
             <p class="text-sm text-gray-600">
               スタッフ・インターン・<br>ボランティア募集中
@@ -143,7 +398,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- 4. 実績ハイライト -->
-  <section class="py-16 bg-monolier-light">
+  <section class="py-16 bg-monolier-light section-soft">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-10">
         <h2 class="text-xl md:text-2xl font-bold text-monolier-dark mb-2">実績</h2>
@@ -152,7 +407,7 @@ import Layout from '../layouts/Layout.astro';
       
       <!-- 写真グリッド（6枚） -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-        <div class="group">
+        <div class="group card-hover">
           <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
             <img src="/images/work-juku-pc.jpg" alt="ものづくり塾" class="w-full h-full object-cover group-hover:scale-105 transition" />
           </div>
@@ -161,7 +416,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm text-monolier-dark mt-1">ものづくり塾</p>
           </div>
         </div>
-        <div class="group">
+        <div class="group card-hover">
           <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
             <img src="/images/work-juku-laser.jpg" alt="レーザー加工体験" class="w-full h-full object-cover group-hover:scale-105 transition" />
           </div>
@@ -170,7 +425,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm text-monolier-dark mt-1">レーザー加工体験</p>
           </div>
         </div>
-        <div class="group">
+        <div class="group card-hover">
           <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
             <img src="/images/work-kumibako.jpg" alt="組箱シリーズ" class="w-full h-full object-cover group-hover:scale-105 transition" />
           </div>
@@ -179,7 +434,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm text-monolier-dark mt-1">組箱シリーズ</p>
           </div>
         </div>
-        <div class="group">
+        <div class="group card-hover">
           <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
             <img src="/images/work-collection.png" alt="コレクションケース" class="w-full h-full object-cover group-hover:scale-105 transition" />
           </div>
@@ -188,7 +443,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm text-monolier-dark mt-1">コレクションケース</p>
           </div>
         </div>
-        <div class="group">
+        <div class="group card-hover">
           <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
             <img src="/images/work-robot.jpg" alt="農業ロボット開発" class="w-full h-full object-cover group-hover:scale-105 transition" />
           </div>
@@ -197,7 +452,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm text-monolier-dark mt-1">農業ロボット開発</p>
           </div>
         </div>
-        <div class="group">
+        <div class="group card-hover">
           <div class="aspect-square bg-white rounded-xl overflow-hidden shadow-sm">
             <img src="/images/work-diorama.jpg" alt="ジオラマ製作" class="w-full h-full object-cover group-hover:scale-105 transition" />
           </div>
@@ -217,7 +472,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- 5. アクセス・お問い合わせ -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-white/90 section-soft">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-10">
         <h2 class="text-xl md:text-2xl font-bold text-monolier-dark">アクセス・お問い合わせ</h2>
@@ -267,21 +522,21 @@ import Layout from '../layouts/Layout.astro';
       <!-- SNS 3カラム -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         <!-- Instagram -->
-        <a href="https://www.instagram.com/sk.monolier" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center hover:shadow-lg transition group">
+        <a href="https://www.instagram.com/sk.monolier" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center group card-hover">
           <p class="font-bold text-monolier-dark mb-1">Instagram</p>
           <p class="text-xs text-gray-500 mb-4">工房・作品紹介</p>
           <img src="/images/sk.monolier_qr.png" alt="Instagram QR" class="w-40 h-40 mx-auto group-hover:scale-105 transition" />
         </a>
         
         <!-- Threads -->
-        <a href="https://www.threads.com/@sk.monolier" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center hover:shadow-lg transition group">
+        <a href="https://www.threads.com/@sk.monolier" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center group card-hover">
           <p class="font-bold text-monolier-dark mb-1">Threads</p>
           <p class="text-xs text-gray-500 mb-4">塾の様子配信</p>
           <img src="/images/threads_qr.png" alt="Threads QR" class="w-40 h-40 mx-auto group-hover:scale-105 transition" />
         </a>
         
         <!-- 公式LINE -->
-        <a href="https://lin.ee/OvEhQNp" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center hover:shadow-lg transition group">
+        <a href="https://lin.ee/OvEhQNp" target="_blank" rel="noopener" class="bg-monolier-light rounded-xl p-6 text-center group card-hover">
           <p class="font-bold text-monolier-dark mb-1">公式LINE</p>
           <p class="text-xs text-gray-500 mb-4">お問い合わせはこちら</p>
           <img src="/images/L_gainfriends_2dbarcodes_GW.png" alt="LINE QR" class="w-40 h-40 mx-auto group-hover:scale-105 transition" />

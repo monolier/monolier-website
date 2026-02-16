@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>想造工房モノリエ チラシ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* モノリエブランドカラー */
+      --brown: #7C5D3B;
+      --green: #4A7C59;
+      --teal: #2A7B8C;
+      --coral: #C75B39;
+      --gold: #C9A86C;
+      --dark: #2D2D2D;
+      --light: #F8F5F0;
+      --cream: #FFFDF8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #e0e0e0;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* A4サイズ */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: white;
+      margin: 20px auto;
+      padding: 8mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 蛍光ペン風ハイライト */
+    .highlight-green {
+      background: linear-gradient(transparent 60%, rgba(74, 124, 89, 0.2) 60%);
+      padding: 0 2px;
+    }
+    .highlight-coral {
+      background: linear-gradient(transparent 60%, rgba(199, 91, 57, 0.2) 60%);
+      padding: 0 2px;
+    }
+    .highlight-gold {
+      background: linear-gradient(transparent 60%, rgba(201, 168, 108, 0.25) 60%);
+      padding: 0 2px;
+    }
+
+    /* ===== 表面 ===== */
+    .front-page {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* ヘッダー（ロゴ） */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .header img {
+      height: 70px;
+      object-fit: contain;
+    }
+
+    /* ヒーローセクション */
+    .hero-section {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .hero-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .hero-sub {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hero-sub img {
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* 2カラム紹介 */
+    .intro-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .intro-card {
+      background: white;
+      border-radius: 10px;
+      padding: 18px;
+      border-top: 4px solid var(--green);
+    }
+
+    .intro-card.business {
+      border-top-color: var(--coral);
+    }
+
+    .intro-card .label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .intro-card.personal .label { color: var(--green); }
+    .intro-card.business .label { color: var(--coral); }
+
+    .intro-card .catch {
+      font-size: 16px;
+      color: var(--dark);
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .intro-card .problems {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 10px;
+      padding-left: 12px;
+    }
+
+    .intro-card .problems li {
+      list-style: none;
+      margin-bottom: 4px;
+    }
+
+    .intro-card .solution {
+      font-size: 15px;
+      color: var(--dark);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .intro-card .services {
+      font-size: 13px;
+      color: #666;
+      padding-left: 12px;
+      border-left: 3px solid rgba(0,0,0,0.15);
+    }
+
+    .intro-card .services p {
+      margin-bottom: 5px;
+    }
+
+    .intro-card .services strong {
+      color: var(--dark);
+    }
+
+    /* 作業風景2枚 */
+    .scenes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .scene-item {
+      text-align: center;
+    }
+
+    .scene-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 4px;
+    }
+
+    .scene-item p {
+      font-size: 9px;
+      color: var(--dark);
+    }
+
+    /* メッセージ */
+    .message {
+      text-align: center;
+      font-size: 20px;
+      color: var(--dark);
+      margin: 0 0 18px 0;
+      padding: 0;
+    }
+
+    /* 工房拡大告知（フッター） */
+    .expand-notice {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    /* フッター4カラム */
+    .footer-4col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .footer-item {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    /* 営業情報 */
+    .footer-4col .business-info {
+      text-align: left;
+    }
+
+    .footer-4col .business-info h4 {
+      font-size: 12px;
+      color: var(--brown);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .footer-4col .business-info .info-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 10px;
+    }
+
+    .footer-4col .business-info .info-row .label {
+      color: #666;
+      min-width: 40px;
+    }
+
+    .footer-4col .business-info .info-row .value {
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .footer-4col .business-info .info-row .note {
+      color: var(--coral);
+      font-size: 9px;
+    }
+
+    .footer-4col .business-info .extra {
+      font-size: 9px;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    /* SNSアイテム */
+    .footer-4col .sns-item {
+      text-align: center;
+    }
+
+    .footer-4col .sns-item p.title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+
+    .footer-4col .sns-item p.desc {
+      font-size: 9px;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .footer-4col .sns-item img {
+      width: 90px;
+      height: 90px;
+    }
+
+    /* ===== 裏面 ===== */
+    .back-page {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* 裏面ヘッダー */
+    .back-header {
+      background: var(--green);
+      color: white;
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-header-content {
+      text-align: left;
+    }
+
+    .back-header h2 {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 2px;
+    }
+
+    .back-header-content p {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .back-header-content .highlight-text {
+      background: linear-gradient(transparent 60%, rgba(255, 255, 255, 0.4) 60%);
+      padding: 0 2px;
+    }
+
+    .trial-badge {
+      background: white;
+      color: var(--green);
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .trial-badge .badge-main {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .trial-badge .badge-sub {
+      font-size: 9px;
+      color: #666;
+    }
+
+    /* キャッチ */
+    .juku-catch {
+      text-align: center;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    .juku-catch p {
+      font-size: 15px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    /* 特徴 */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .feature-item {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-item .icon {
+      font-size: 16px;
+    }
+
+    .feature-item p {
+      font-size: 10px;
+      color: var(--dark);
+      line-height: 1.4;
+    }
+
+    /* できること */
+    .can-do {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .can-do h3 {
+      font-size: 11px;
+      color: var(--brown);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .can-do-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .can-do-item {
+      background: white;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+    }
+
+    .can-do-item img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 5px;
+    }
+
+    .can-do-item .photo-placeholder {
+      width: 100%;
+      height: 130px;
+      background: #f0f0f0;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #999;
+      margin-bottom: 5px;
+    }
+
+    .can-do-item p {
+      font-size: 11px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    /* 料金 + ワークショップ横並び */
+    .pricing-info-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      align-items: stretch;
+    }
+
+    /* 料金表 */
+    .pricing {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing h3 {
+      font-size: 11px;
+      color: var(--brown);
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+    }
+
+    .pricing-table th {
+      background: var(--green);
+      color: white;
+      padding: 6px 5px;
+      text-align: center;
+    }
+
+    .pricing-table td {
+      padding: 6px 5px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .pricing-table tr:nth-child(even) {
+      background: var(--light);
+    }
+
+    .pricing-table .price {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--coral);
+    }
+
+    .pricing-table .price .note {
+      font-size: 9px;
+      font-weight: 400;
+      color: #666;
+    }
+
+    .pricing-table tr.adult-spot {
+      background: #fff8e8;
+    }
+
+    .pricing-table .age-note {
+      display: block;
+      font-size: 8px;
+      color: #888;
+      font-weight: 400;
+    }
+
+    .pricing-table tr.consult-row {
+      background: #f5f5f5;
+    }
+
+    .pricing-table .price.consult {
+      font-size: 11px;
+      color: #666;
+    }
+
+    /* 基本情報（横） */
+    .basic-info-side {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 100px;
+    }
+
+    .basic-info-side .info-box {
+      background: var(--light);
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .basic-info-side .info-box h4 {
+      font-size: 9px;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .basic-info-side .info-box p {
+      font-size: 11px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .basic-info-side .info-box .highlight {
+      color: var(--coral);
+      font-weight: 700;
+    }
+
+    /* ワークショップカラム */
+    .workshop-col {
+      min-width: 140px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .workshop-col h3 {
+      font-size: 10px;
+      color: var(--brown);
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .workshop-col h3 .preparing-label {
+      font-size: 8px;
+      color: #999;
+      font-weight: 400;
+    }
+
+    .ws-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      background: var(--light);
+      border-radius: 6px;
+      padding: 8px;
+    }
+
+    .ws-list span {
+      background: white;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 9px;
+      color: var(--dark);
+    }
+
+    .ws-list span.preparing {
+      background: transparent;
+      text-align: center;
+      color: #999;
+      font-size: 11px;
+      padding: 20px 8px;
+    }
+
+    /* 代表紹介 */
+    .founder-section {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      background: var(--light);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .founder-photo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .founder-text {
+      flex: 1;
+    }
+
+    .founder-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .founder-career {
+      font-size: 10px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .founder-vision {
+      font-size: 10px;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* なぜものづくり教育？ */
+    .why-education {
+      padding: 8px 0;
+    }
+
+    .why-education h3 {
+      font-size: 13px;
+      color: var(--brown);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .why-item {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .why-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .why-content {
+      flex: 1;
+    }
+
+    .why-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .why-text {
+      font-size: 10px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    /* 基本情報 */
+    .basic-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .info-box {
+      background: var(--light);
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .info-box h4 {
+      font-size: 8px;
+      color: var(--brown);
+      margin-bottom: 2px;
+    }
+
+    .info-box p {
+      font-size: 10px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .info-box .highlight {
+      color: var(--coral);
+      font-weight: 700;
+    }
+
+    /* 体験申し込み */
+    .trial-section {
+      background: linear-gradient(135deg, var(--gold) 0%, #d4b896 100%);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .trial-text {
+      flex: 1;
+    }
+
+    .trial-text h3 {
+      font-size: 16px;
+      color: white;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .trial-text p {
+      font-size: 10px;
+      color: white;
+    }
+
+    .trial-qr {
+      display: flex;
+      gap: 8px;
+    }
+
+    .trial-qr .qr-box {
+      background: white;
+      border-radius: 6px;
+      padding: 6px;
+      text-align: center;
+    }
+
+    .trial-qr .qr-box img {
+      width: 55px;
+      height: 55px;
+      margin-bottom: 2px;
+    }
+
+    .trial-qr .qr-box p {
+      font-size: 8px;
+      color: var(--dark);
+    }
+
+    /* 場所 */
+    .location {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .location h4 {
+      font-size: 10px;
+      color: var(--brown);
+      margin-bottom: 3px;
+    }
+
+    .location p {
+      font-size: 9px;
+      color: var(--dark);
+    }
+
+    .location .note {
+      font-size: 8px;
+      color: var(--coral);
+      margin-top: 2px;
+    }
+
+    /* 印刷用 */
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+    }
+
+    /* ページ区切り表示 */
+    .page-label {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 10px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 表面 ===== -->
+  <div class="page front-page">
+    <span class="page-label" style="display:none;">表面</span>
+
+    <!-- ヘッダー -->
+    <div class="header">
+      <img src="public/images/logo.png" alt="モノリエロゴ">
+    </div>
+
+    <!-- ヒーロー画像 + 写真2枚 -->
+    <div class="hero-section">
+      <div class="hero-main">
+        <img src="public/images/hero-workshop.png" alt="モノリエ工房">
+      </div>
+      <div class="hero-sub">
+        <img src="public/images/scene-workshop-2.png" alt="PC分解">
+        <img src="public/images/scene-workshop.png" alt="マイコンカーラリー">
+      </div>
+    </div>
+
+    <!-- 2カラム紹介 -->
+    <div class="intro-columns">
+      <!-- 個人向け -->
+      <div class="intro-card personal">
+        <p class="label">個人の方へ</p>
+        <p class="catch">「こんなの作れたらいいな」<br>そう思ったこと、ありませんか？</p>
+        <ul class="problems">
+          <li>・道具がない</li>
+          <li>・やり方がわからない</li>
+          <li>・一人じゃ不安</li>
+        </ul>
+        <p class="solution">大丈夫。<br><span class="highlight-green">一緒に考えて、一緒に作りましょう。</span></p>
+        <div class="services">
+          <p><strong>学ぶ：</strong>ワークショップ・ものづくり塾</p>
+          <p><strong>作る：</strong>レンタル工房</p>
+          <p><strong>買う：</strong>オンラインショップ</p>
+          <p><strong>頼む：</strong>オーダーメイド制作</p>
+        </div>
+      </div>
+
+      <!-- 団体・事業者向け -->
+      <div class="intro-card business">
+        <p class="label">団体・事業者の方へ</p>
+        <p class="catch">「これ、どこに相談すればいいんだろう」<br>そう思ったこと、ありませんか？</p>
+        <ul class="problems">
+          <li>・試作</li>
+          <li>・小ロット</li>
+          <li>・オリジナルグッズ</li>
+        </ul>
+        <p class="solution">ものづくりの困りごと、<br><span class="highlight-coral">まずは気軽にご相談ください。</span></p>
+        <div class="services">
+          <p><strong>受託開発：</strong>試作・小ロット製造</p>
+          <p><strong>ノベルティ：</strong>企業向けオリジナルグッズ</p>
+          <p><strong>ジオラマ：</strong>展示会・博物館向け</p>
+          <p><strong>計測器：</strong>時間・速度計測システム</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- メッセージ -->
+    <div class="message">
+      <p>お子様から大人まで、ものづくりや製品づくりを<span class="highlight-gold">一緒に楽しみましょう。</span></p>
+    </div>
+
+    <!-- 工房拡大告知 -->
+    <div class="expand-notice">
+      <p>📢 <strong>2026年春、南箕輪へ移転予定</strong>｜4月プレオープン／夏 正式オープン</p>
+    </div>
+
+    <!-- 営業情報 + SNS（4カラム） -->
+    <div class="footer-4col">
+      <div class="footer-item business-info">
+        <h4>営業情報</h4>
+        <div class="info-row">
+          <span class="label">営業日</span>
+          <span class="value">木・金・土</span>
+        </div>
+        <div class="info-row">
+          <span class="label">店舗</span>
+          <span class="value">10:00〜18:00<br><span class="note">※現在準備中</span></span>
+        </div>
+        <div class="info-row">
+          <span class="label">塾</span>
+          <span class="value">19:00〜21:00</span>
+        </div>
+        <p class="extra">📍 箕輪町中箕輪13275-1<br>🚗 駐車場あり</p>
+      </div>
+      <div class="footer-item sns-item">
+        <p class="title">Instagram</p>
+        <p class="desc">工房・作品紹介</p>
+        <img src="public/images/sk.monolier_qr.png" alt="Instagram QR">
+      </div>
+      <div class="footer-item sns-item">
+        <p class="title">Threads</p>
+        <p class="desc">塾の様子配信</p>
+        <img src="public/images/threads_qr.png" alt="Threads QR">
+      </div>
+      <div class="footer-item sns-item">
+        <p class="title">公式LINE</p>
+        <p class="desc">お問い合わせはこちら</p>
+        <img src="public/images/L_gainfriends_2dbarcodes_GW.png" alt="LINE QR">
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 裏面 ===== -->
+  <div class="page back-page">
+    <span class="page-label" style="display:none;">裏面</span>
+
+    <!-- ヘッダー -->
+    <div class="back-header">
+      <div class="back-header-content">
+        <h2>ものづくり塾</h2>
+        <p>「<span class="highlight-text">こんなの作れたらいいな</span>」を一緒に叶えよう</p>
+      </div>
+      <div class="trial-badge">
+        <p class="badge-main">🎁 無料体験受付中</p>
+        <p class="badge-sub">公式LINEからお気軽に</p>
+      </div>
+    </div>
+
+    <!-- 特徴 -->
+    <div class="features">
+      <div class="feature-item">
+        <span class="icon">📝</span>
+        <p>カリキュラムなし・自分のペースで</p>
+      </div>
+      <div class="feature-item">
+        <span class="icon">🔧</span>
+        <p>レーザー・3Dプリンタ 本格設備が使える</p>
+      </div>
+      <div class="feature-item">
+        <span class="icon">👨‍👩‍👧‍👦</span>
+        <p>小学生から大人まで誰でも歓迎</p>
+      </div>
+    </div>
+
+    <!-- できること -->
+    <div class="can-do">
+      <h3>できること</h3>
+      <div class="can-do-grid">
+        <div class="can-do-item">
+          <img src="public/images/work-juku-laser.jpg" alt="レーザー加工">
+          <p>レーザー加工</p>
+        </div>
+        <div class="can-do-item">
+          <img src="public/images/work-juku-pc.jpg" alt="マインクラフト">
+          <p>マインクラフト</p>
+        </div>
+        <div class="can-do-item">
+          <img src="public/images/work-juku-programming.jpg" alt="プログラミング">
+          <p>プログラミング</p>
+        </div>
+        <div class="can-do-item">
+          <img src="public/images/work-juku-3dprint.jpg" alt="3Dプリンタ">
+          <p>3Dプリンタ</p>
+        </div>
+        <div class="can-do-item">
+          <img src="public/images/work-juku-electronics.jpg" alt="電子工作">
+          <p>電子工作</p>
+        </div>
+        <div class="can-do-item">
+          <img src="public/images/work-juku-diorama.webp" alt="ジオラマ">
+          <p>ジオラマ</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 料金表 + ワークショップ -->
+    <div class="pricing-info-row">
+      <div class="pricing">
+        <h3>ものづくり塾料金（税込）</h3>
+        <table class="pricing-table">
+          <tr>
+            <th>コース</th>
+            <th>時間</th>
+            <th>回数</th>
+            <th>月謝</th>
+          </tr>
+          <tr>
+            <td>ライト<span class="age-note">中学生まで</span></td>
+            <td>90分</td>
+            <td>月3回</td>
+            <td class="price">12,100円</td>
+          </tr>
+          <tr>
+            <td>スタンダード<span class="age-note">中学生まで</span></td>
+            <td>120分</td>
+            <td>月3回</td>
+            <td class="price">15,400円</td>
+          </tr>
+          <tr>
+            <td>フリー<span class="age-note">中学生まで</span></td>
+            <td>120分</td>
+            <td>月6回まで</td>
+            <td class="price">19,800円</td>
+          </tr>
+          <tr class="consult-row">
+            <td colspan="3">高校生以上の月謝コース</td>
+            <td class="price consult">要相談</td>
+          </tr>
+          <tr class="adult-spot">
+            <td>スポット<span class="age-note">高校生以上</span></td>
+            <td>120分</td>
+            <td>都度</td>
+            <td class="price">3,300円<span class="note">/回</span></td>
+          </tr>
+        </table>
+      </div>
+      <div class="workshop-col">
+        <h3>🎨 ワークショップ<span class="preparing-label">（準備中）</span></h3>
+        <div class="ws-list">
+          <span>レーザーコースター</span>
+          <span>シーリングスタンプ</span>
+          <span>プレゼントボックス</span>
+          <span>ジオラマ製作</span>
+          <span>組箱製作</span>
+          <span>時計作り（電子工作）</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- なぜものづくり教育？ -->
+    <div class="why-education">
+      <h3>💡 なぜ今、ものづくり教育なのか</h3>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">🤖</div>
+          <div class="why-content">
+            <div class="why-title">AI時代の価値変化</div>
+            <div class="why-text">AIが発展するほど「人の手でつくる力」の価値が高まる</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📚</div>
+          <div class="why-content">
+            <div class="why-title">教育の空白地帯</div>
+            <div class="why-text">継続的な技術教育の場がない。ハードを扱う場は少ない</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <div class="why-content">
+            <div class="why-title">技術者不足への対応</div>
+            <div class="why-text">エンジニア不足に、実務経験を活かした実践教育を</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 代表紹介 -->
+    <div class="founder-section">
+      <div class="founder-photo">
+        <img src="public/images/founder-tomohiro.jpg" alt="代表 笠川知洋">
+      </div>
+      <div class="founder-text">
+        <p class="founder-title">代表取締役 笠川 知洋</p>
+        <p class="founder-career">工業高校・大学・大学院で電子情報を専攻。セイコーエプソンで製造技術を4年、2014年にエクシンテック株式会社を創業（模型用品・競技用計測器の開発製造）、2019年にものづくり塾Awakeを開業、2025年に想造工房モノリエに屋号変更、2026年に株式会社モノリエとして事業統合。</p>
+        <p class="founder-vision">好きなことに夢中になる時、人は自然に手を動かし、挑戦する。その積み重ねが、明日を生きる自信になる。<br>── 誰もが全力で挑戦できる場所、そして挑戦する人を応援できる場所。そんな場所をつくっていきたい。</p>
+      </div>
+    </div>
+
+    <!-- 基本情報は料金表の横に移動したので削除 -->
+
+  </div>
+
+</body>
+</html>

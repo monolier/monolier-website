@@ -1,0 +1,343 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="私たちについて | 想造工房モノリエ" description="想造工房モノリエの理念、名前の由来、代表ストーリー。「好きからはじめ、手を動かし、挑戦を重ねて、明日の自信へ。」">
+
+  <!-- 1. 私たちの想い -->
+  <section class="pt-28 pb-16 bg-monolier-light">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-monolier-gray text-sm text-center mb-2">ABOUT US</p>
+      <h1 class="text-2xl md:text-3xl font-bold text-monolier-dark text-center mb-8">私たちの想い</h1>
+      
+      <div class="rounded-2xl overflow-hidden shadow-lg">
+        <img src="/images/about-catchcopy.png" alt="好きからはじめ、手を動かし、挑戦を重ねて、明日の自信へ。" class="w-full" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 壱環 - 成長の循環 -->
+  <section id="ikkan" class="py-16 bg-monolier-dark text-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-center text-lg md:text-xl text-white mb-8">
+        この想いを形にしたのが、成長の循環「<span class="text-monolier-gold font-bold">壱環</span>」です。
+      </p>
+      
+      <!-- 壱環メイン -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 md:p-10 border border-white/20 mb-10">
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+          <!-- 左：壱環ロゴ -->
+          <div class="flex justify-center md:justify-start">
+            <img src="/images/ikkan.png" alt="壱環 IKKAN" class="w-48 md:w-56 invert" />
+          </div>
+          
+          <!-- 右：説明文（2カラム分） -->
+          <div class="md:col-span-2 text-left space-y-2">
+            <p class="text-white/90">工房との出会いが「やってみたい」を生む。</p>
+            <p class="text-white/90">「やってみたい」に挑戦し、「できた！」を経験する。</p>
+            <p class="text-white/90">「できた！」を繰り返すうちに「自分でできる」ようになり、自信につながる。</p>
+            <p class="text-white/90">自信がついたら、自分の作品を生み出して「届けたい」と思うようになる。</p>
+            <p class="text-white/90">「届けたい」が「つなげたい」に変わる。</p>
+            <p class="text-white/90">成長した人が、次の出会いを届ける。</p>
+            <p class="text-white font-medium pt-2">この循環が続く限り、人も場所も育ち続けます。</p>
+          </div>
+        </div>
+        
+        <div class="mt-8 pt-6 border-t border-white/20">
+          <!-- 5ステージイラスト -->
+          <div>
+            <img src="/images/ikkan-5stages.png" alt="壱環 5ステージ: 出会う→作る→できる→生み出す→恩送り" class="w-full rounded-xl" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- バトン＆サポーター -->
+      <div class="text-center mb-8">
+        <p class="text-white/90">
+          この循環を支えるのが「<span class="text-monolier-gold font-bold">バトン</span>」と「<span class="text-monolier-gold font-bold">サポーター</span>」。<br>
+          支えられた人も、支えたい人も、次の誰かへ想いをつなぐ。
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 md:p-8">
+          <p class="text-3xl mb-4">🏃</p>
+          <h3 class="text-lg font-bold text-monolier-gold mb-2">モノリエバトン</h3>
+          <p class="text-sm text-monolier-gray mb-4">「誰かの挑戦を、後押ししたい」</p>
+          <p class="text-monolier-dark">
+            ワークショップや講座の参加費を支援。<br>
+            あなたの想いが、誰かの一歩を後押しします。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 md:p-8">
+          <p class="text-3xl mb-4">🤝</p>
+          <h3 class="text-lg font-bold text-monolier-gold mb-2">モノリエサポーター</h3>
+          <p class="text-sm text-monolier-gray mb-4">「挑戦を支える場所であり続けたい」</p>
+          <p class="text-monolier-dark">
+            運営費や奨学支援を継続で支援。<br>
+            みんなの力で、この場所を育てていきます。
+          </p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="/support" class="inline-block px-6 py-3 bg-monolier-gold text-monolier-dark font-medium rounded-full hover:bg-monolier-gold/90 transition">
+          詳しく見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 代表ストーリー -->
+  <section class="py-16 bg-white relative overflow-hidden">
+    <!-- 浮遊装飾 -->
+    <div class="floating-decorations pointer-events-none">
+      <svg class="floating-leaf" style="left: 5%; top: 15%; animation-delay: 0s;" width="40" height="50" viewBox="0 0 40 50" fill="none">
+        <ellipse cx="20" cy="25" rx="14" ry="20" fill="#8bc34a" opacity="0.25" transform="rotate(-15 20 25)"/>
+        <path d="M20 42 Q22 30 20 18" stroke="#7cb342" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <svg class="floating-gear" style="right: 8%; top: 25%; animation-delay: 2s;" width="35" height="35" viewBox="0 0 35 35" fill="none">
+        <path d="M17 5 L19 10 L25 8 L22 14 L28 17 L22 20 L25 26 L19 24 L17 30 L15 24 L9 26 L12 20 L6 17 L12 14 L9 8 L15 10 Z" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <circle cx="17" cy="17" r="5" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.2"/>
+      </svg>
+      <svg class="floating-leaf" style="left: 3%; bottom: 30%; animation-delay: 4s;" width="35" height="45" viewBox="0 0 35 45" fill="none">
+        <ellipse cx="17" cy="22" rx="12" ry="18" fill="#7cb342" opacity="0.2" transform="rotate(10 17 22)"/>
+        <path d="M17 38 Q19 28 17 15" stroke="#689f38" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <svg class="floating-gear" style="right: 5%; bottom: 20%; animation-delay: 1s;" width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 4 L16 8 L21 6 L19 11 L24 14 L19 16 L21 21 L16 19 L15 24 L14 19 L9 21 L11 16 L6 14 L11 11 L9 6 L14 8 Z" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.25"/>
+        <circle cx="15" cy="14" r="4" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.25"/>
+      </svg>
+    </div>
+    
+    <style>
+      .floating-decorations svg {
+        position: absolute;
+      }
+      .floating-leaf {
+        animation: floatLeaf 8s ease-in-out infinite;
+      }
+      .floating-gear {
+        animation: floatGear 10s ease-in-out infinite;
+      }
+      @keyframes floatLeaf {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(5deg); }
+      }
+      @keyframes floatGear {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(-10deg); }
+      }
+    </style>
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <p class="text-monolier-gray text-sm mb-2">FOUNDER'S STORY</p>
+        <h2 class="text-xl md:text-2xl font-bold text-monolier-dark">代表ストーリー</h2>
+      </div>
+      
+      <!-- 導入 + 代表写真 -->
+      <div class="bg-monolier-light rounded-2xl p-6 md:p-8 mb-8">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+          <!-- 代表写真 -->
+          <div class="flex-shrink-0">
+            <img src="/images/founder-tomohiro.jpg" alt="笠川知洋" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg border-4 border-white" />
+          </div>
+          <!-- 導入文 -->
+          <div class="text-center md:text-left">
+            <p class="text-xl md:text-2xl text-monolier-dark font-medium leading-relaxed">
+              成功と失敗は、分岐じゃない。<br>
+              成功するまで一本道が続いているだけ。
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="max-w-5xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+        
+        <!-- ストーリー本文 -->
+        <div class="space-y-6 text-monolier-dark leading-relaxed">
+          
+          <!-- パート1: 教員→エプソン→どん底 -->
+          <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-start mt-8">
+            <!-- 左: 漫画イラスト -->
+            <div>
+              <img src="/images/story-part1-manga.png" alt="代表ストーリー: 教員を目指しエプソンへ、挑戦と失敗、そしてどん底へ" class="w-full rounded-xl shadow-md" />
+            </div>
+            <!-- 右: 文章 -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-bold text-monolier-brown">教員になりたかった。</h3>
+              <p>
+                工業高校、大学院で学び、教員免許も取った（工業・情報）。でも、社会を知らずして教育はできない。自分の可能性にも挑戦したい。だから就職した。
+              </p>
+              <p>
+                エプソンのものづくり塾。メカ、電気、制御、薄膜を学び、ロボット開発にも関わった。技術は身につけたつもりだった。
+              </p>
+              <p>
+                でも、夢だったロボット開発の最前線にいても、成果が見えにくく、昇給も実感できない日々。次第に心が追いつかなくなっていった。
+              </p>
+              <p>
+                言い知れない不安に襲われた。投資やネットワークビジネスに手を出した。これで未来が開けると思った。会社を辞めた。
+              </p>
+              <p>
+                でも、どちらもうまくいかず、大きな借金だけが残った。自分には、ものづくりしか残っていなかった。
+              </p>
+              <p>
+                知り合いの紹介で会社を創業した（エクシンテック）。しかし、技術は移管されず、相手はいなくなった。創業融資の半分を失い、残りも知人の興行に出資して返ってこなかった。
+              </p>
+              <p class="font-medium text-monolier-brown">
+                実績もない。お金もない。信頼も自信もない。何もかもなくなった。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-r from-monolier-gold/10 to-monolier-light rounded-2xl p-6 my-8 shadow-sm">
+            <p class="text-xl font-bold text-monolier-brown text-center">守られていたことに気づくのは、失ってからだった。</p>
+          </div>
+          
+          <!-- パート2: 妻の支え→模型事業→信頼を得る -->
+          <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-start mt-8">
+            <!-- 左: 漫画イラスト -->
+            <div>
+              <img src="/images/story-part2-manga.png" alt="代表ストーリー: 妻の支え、模型事業への挑戦、信頼を得る" class="w-full rounded-xl shadow-md" />
+            </div>
+            <!-- 右: 文章 -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-bold text-monolier-brown">それでも、妻は支えてくれた。</h3>
+              <p>
+                ある日、子どものプラレール遊びを眺めていて、ふと思いついた。模型事業なら、自分にもできるかもしれない。
+              </p>
+              <p>
+                模型業界を知るために、30過ぎて模型屋でバイトを始めた。LED商品を作り、模型屋に並べさせてもらった。少しずつ、仕事をもらえるようになった。
+              </p>
+              <p>
+                赤字でも、最後までやり抜いた。誠心誠意、目の前の人に向き合った。その中で、高校・大学・会社で学んだ知識が、実践を通じて本当の技術に変わっていった。
+              </p>
+              <p class="font-medium text-monolier-brown">
+                本気で向き合っていくことで、「笠川さんに頼みたい」「笠川さんならできそう」と言ってくれる人が増えていった。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-r from-monolier-gold/10 to-monolier-light rounded-2xl p-6 my-8 shadow-sm">
+            <p class="text-xl font-bold text-monolier-brown text-center">誰かが信じてくれるから、また立ち上がれる。</p>
+          </div>
+          
+          <!-- パート3: モノリエへ→今 -->
+          <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-start mt-8">
+            <!-- 左: 漫画イラスト -->
+            <div>
+              <img src="/images/story-part3-manga.png" alt="代表ストーリー: 想造工房モノリエへ、楽しく働いて夢を形に" class="w-full rounded-xl shadow-md" />
+            </div>
+            <!-- 右: 文章 -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-bold text-monolier-brown">そして、モノリエへ。</h3>
+              <p>
+                模型事業を軸に、車やバイク競技の計測器なども手がけながら10年。教育事業を主軸に「想造工房モノリエ」として再編し、妻の芸術的センスも活かして、地域密着型の事業へ。
+              </p>
+              <p>
+                今、家族と従業員と一緒に、好きなことを仕事にできている。振り返れば、あの失敗もこの道の途中だった。
+              </p>
+              <p>
+                今、教育で伝えているのも、受託開発で実践しているのも、商品づくりで貫いているのも──
+              </p>
+              <p class="font-medium text-monolier-brown">
+                売れるものを狙わない。自分がほしいと思えるものをつくる。その誠実さが、だれかの挑戦を支える力になると信じている。
+              </p>
+              <p>
+                大変でも楽しく、辛くても次をめざして、自分で作って自分で売って、自分で稼ぐ。この背中を見せるのが、自分の役目だと思っている。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-r from-monolier-gold/10 to-monolier-light rounded-2xl p-6 my-8 shadow-sm">
+            <p class="text-xl font-bold text-monolier-brown text-center">手を動かし続ければ、道は開ける。</p>
+          </div>
+          
+          <!-- 締め：哲学ボックス -->
+          <div class="bg-monolier-light rounded-2xl p-6 md:p-8 my-8">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+              <!-- 左: 文章 + 署名 -->
+              <div class="space-y-4">
+                <p class="text-monolier-dark leading-relaxed">
+                  多動的で、飽き性で、<br>
+                  感情的で負けず嫌い。
+                </p>
+                <p class="text-monolier-dark leading-relaxed">
+                  プライドが高く、手を抜けない、<br>
+                  あそびがない、騙されやすい、<br>
+                  同じ過ちを繰り返す。
+                </p>
+                <p class="text-monolier-dark leading-relaxed">
+                  でも、その弱さが今の自分を作った。
+                </p>
+                <p class="text-xl font-bold text-monolier-brown pt-2">
+                  信じる。尽くす。<br>
+                  全力でしかやれないから、<br>
+                  想いが届く人と、共に高め合う。
+                </p>
+                <!-- 署名 -->
+                <div class="pt-4 mt-4 border-t border-monolier-brown/20">
+                  <p class="text-monolier-gray text-sm">想造工房モノリエ 代表</p>
+                  <p class="text-lg font-bold text-monolier-dark">笠川 知洋</p>
+                </div>
+              </div>
+              <!-- 右: イラスト -->
+              <div>
+                <img src="/images/story-philosophy-manga.png" alt="信じる。尽くす。全力でしかやれないから、想いが届く人と、共に高め合う" class="w-full rounded-xl shadow-md" />
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 基本情報 -->
+  <section class="py-16 bg-monolier-light">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-xl md:text-2xl font-bold text-monolier-dark text-center mb-10">基本情報</h2>
+      
+      <div class="bg-white rounded-2xl p-6 md:p-8">
+        <table class="w-full">
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="py-4 text-monolier-gray w-1/3">屋号</td>
+              <td class="py-4 font-medium text-monolier-dark">想造工房モノリエ</td>
+            </tr>
+            <tr>
+              <td class="py-4 text-monolier-gray">代表者</td>
+              <td class="py-4 text-monolier-dark">笠川 知洋（かさかわ ともひろ）</td>
+            </tr>
+            <tr>
+              <td class="py-4 text-monolier-gray">体制</td>
+              <td class="py-4 text-monolier-dark">3名</td>
+            </tr>
+            <tr>
+              <td class="py-4 text-monolier-gray">所在地</td>
+              <td class="py-4 text-monolier-dark">長野県上伊那郡箕輪町大字中箕輪13275-1</td>
+            </tr>
+            <tr>
+              <td class="py-4 text-monolier-gray">メール</td>
+              <td class="py-4 text-monolier-dark">
+                <a href="mailto:info@monolier.jp" class="text-monolier-brown hover:underline">info@monolier.jp</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 text-monolier-gray">開業</td>
+              <td class="py-4 text-monolier-dark">2019年10月</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/contact" class="inline-block px-8 py-4 bg-monolier-brown text-white font-bold rounded-full hover:bg-monolier-brown/90 transition">
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
